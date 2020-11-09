@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+.l1 {
+  font-style: italic;
+  /* font-weight: bold !important; */
+  font-weight: 900 !important;
+}
+.l2 {
+  /* font-weight: bold !important; */
+  font-weight: 700 !important;
+}
+.l3 {
+  font-style: italic;
+  color: white;
+  /* text-align: center; */
+  /* font-weight: bold !important; */
+  font-weight: 700 !important;
+}
+@media (min-width: 780px) {
+  .tt {
+    width: 50% !important;
+  }
+}
