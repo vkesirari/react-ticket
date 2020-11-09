@@ -44,6 +44,12 @@
 .l2 {
   /* font-weight: bold !important; */
   font-weight: 700 !important;
+  /* font-weight: bold !important; */
+}
+.l4 {
+  /* font-weight: bold !important; */
+  font-weight: 500 !important;
+  color: white !important;
 }
 .l3 {
   font-style: italic;
@@ -51,6 +57,19 @@
   /* text-align: center; */
   /* font-weight: bold !important; */
   font-weight: 700 !important;
+}
+
+.l5 {
+  font-weight: 500 !important;
+  font-size: xx-large !important;
+}
+.l6 {
+  font-size: large !important;
+  font-weight: 600 !important;
+}
+.l7 {
+  font-size: large !important;
+  font-weight: 400 !important;
 }
 @media (min-width: 780px) {
   .tt {

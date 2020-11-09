@@ -4,7 +4,8 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import { withStyles } from "@material-ui/core/styles";
-
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
 const styles = (theme) => ({
   root: {
     flexGrow: 1,
@@ -31,7 +32,13 @@ class Ticket extends Component {
     const { classes } = this.props;
     return (
       <React.Fragment>
-        <div className="tt" style={{ width: "100%" }}>
+        <div
+          className="tt"
+          style={{
+            width: "100%",
+            //  padding: 5
+          }}
+        >
           {/* <Paper className={classes.paper}> */}
           <Grid
             container
@@ -39,13 +46,16 @@ class Ticket extends Component {
             //  style={{ width: "50%" }}
           >
             {/* col1 for row */}
-            <Grid
-              item
-              xs={2}
-              container
-              style={{ backgroundColor: "lightgrey" }}
-            >
-              {/* <Typography>QrCode</Typography> */}
+            <Grid item xs={2} container style={{ backgroundColor: "#f5f2f2" }}>
+              {/* <Typography>BarCode</Typography> */}
+              {/* <Card> */}
+              {/* <CardContent></CardContent> */}
+              {/* <img
+                // style={{ transform: "rotate(270deg)" }}
+                src="/barcode.png"
+                alt=""
+              /> */}
+              {/* </Card> */}
             </Grid>
             {/* col2 for other stuff */}
             <Grid
@@ -58,46 +68,65 @@ class Ticket extends Component {
                 <Grid
                   item
                   xs={12}
-                  style={{ backgroundColor: "purple", height: "60px" }}
+                  style={{ backgroundColor: "purple", height: "50px" }}
                 >
                   <Grid item xs={12} container direction="row">
                     <Grid
                       item
                       xs={6}
-                      style={{ backgroundColor: "orange", height: "60px" }}
+                      style={{ backgroundColor: "orange", height: "50px" }}
                     ></Grid>
                     <Grid
                       item
                       xs={6}
                       // style={{ backgroundColor: "purple", height: "40px" }}
                     >
-                      <Grid item xs={12} container>
+                      <Grid item xs={12} container style={{ height: "50px" }}>
                         <Grid
                           item
-                          xs={6}
+                          xs={4}
                           // style={{ backgroundColor: "purple", height: "40px" }}
                         ></Grid>
-                        <Grid
-                          item
-                          xs={6}
-                          // style={{ backgroundColor: "purple", height: "40px" }}
-                        >
+                        <Grid item xs={8}>
                           {/* <Typography gutterBottom variant="subtitle1">
                             TEAM STADIUM
                           </Typography> */}
                           {/* <div style={{ display: "flex" }}> */}
-                          <Typography
-                            variant="title"
-                            style={{ color: "white" }}
+                          <Grid
+                            item
+                            xs={12}
+                            container
+                            direction="row"
+                            alignItems="center"
+                            justify="center"
                           >
-                            TEAM
-                          </Typography>
-                          <Typography
-                            variant="subheading"
-                            style={{ color: "white" }}
+                            <Typography
+                              // variant="title"
+                              className="l4"
+                              // style={{ color: "white" }}
+                              noWrap
+                            >
+                              TEAM
+                            </Typography>
+                          </Grid>
+                          <Grid
+                            item
+                            xs={12}
+                            container
+                            direction="row"
+                            alignItems="center"
+                            justify="center"
                           >
-                            STADIUM
-                          </Typography>
+                            <Typography
+                              // variant="title"
+                              className="l4"
+                              // style={{ color: "white" }}
+                              noWrap
+                            >
+                              STADIUM
+                            </Typography>
+                          </Grid>
+
                           {/* </div> */}
                         </Grid>
                       </Grid>
@@ -113,14 +142,92 @@ class Ticket extends Component {
                     item
                     xs={6}
                     container
-                    style={{ backgroundColor: "white" }}
+                    style={{ backgroundColor: "#f5f2f2", paddingLeft: "10px" }}
                   >
                     <Grid item xs={12} container>
-                      <Typography gutterBottom variant="subtitle1">
-                        15 August 2018 | 14.00
-                      </Typography>
+                      <Grid
+                        item
+                        xs={2}
+                        container
+                        alignItems="center"
+                        justify="center"
+                      >
+                        <Typography gutterBottom className="l5">
+                          15
+                        </Typography>
+                      </Grid>
+                      <Grid
+                        item
+                        xs={5}
+                        container
+                        alignItems="center"
+                        justify="center"
+                        // style={{ padding: 2 }}
+                      >
+                        <Grid
+                          item
+                          xs={12}
+                          container
+                          direction="row"
+                          alignItems="center"
+                          justify="center"
+                        >
+                          <Typography
+                            // variant="title"
+                            // className="l4"
+                            // style={{ color: "white" }}
+                            noWrap
+                            className="l7"
+                          >
+                            August
+                          </Typography>
+                        </Grid>
+                        <Grid
+                          item
+                          xs={12}
+                          container
+                          direction="row"
+                          alignItems="center"
+                          justify="center"
+                        >
+                          <Typography
+                            // variant="title"
+                            // className="l4"
+                            // style={{ color: "white" }}
+                            noWrap
+                            className="l7"
+                          >
+                            2018
+                          </Typography>
+                        </Grid>
+
+                        {/* <Typography gutterBottom className="l2">
+                          2018
+                        </Typography> */}
+                      </Grid>
+                      <Grid item xs={1} alignItems="center" container>
+                        <Typography gutterBottom className="l2">
+                          |
+                        </Typography>
+                      </Grid>
+                      <Grid
+                        item
+                        xs={4}
+                        container
+                        alignItems="center"
+                        // justify="center"
+                      >
+                        <Typography gutterBottom className="l6">
+                          14.00
+                        </Typography>
+                      </Grid>
                     </Grid>
-                    <Grid item xs={12} container style={{ height: "120px" }}>
+                    <Grid
+                      item
+                      xs={12}
+                      container
+                      //  style={{ height: "120px" }}
+                    >
                       <Grid
                         item
                         xs={12}
@@ -128,6 +235,7 @@ class Ticket extends Component {
                         style={{
                           backgroundColor: "lightblue",
                           marginBottom: 5,
+                          paddingLeft: 5,
                         }}
                       >
                         <Grid item xs={12} container>
@@ -155,7 +263,11 @@ class Ticket extends Component {
                               }
                             }
                           >
-                            <Typography gutterBottom variant="subtitle1">
+                            <Typography
+                              gutterBottom
+                              variant="subtitle1"
+                              style={{ wordWrap: "break-word" }}
+                            >
                               : East Stand
                             </Typography>
                           </Grid>
@@ -168,6 +280,7 @@ class Ticket extends Component {
                         style={{
                           backgroundColor: "#5dbddd",
                           marginBottom: 5,
+                          paddingLeft: 5,
                         }}
                       >
                         <Grid item xs={12} container>
@@ -208,6 +321,7 @@ class Ticket extends Component {
                         style={{
                           backgroundColor: "lightblue",
                           marginBottom: 5,
+                          paddingLeft: 5,
                         }}
                       >
                         <Grid item xs={12} container>
@@ -257,12 +371,13 @@ class Ticket extends Component {
                     item
                     xs={6}
                     container
-                    // style={{ backgroundColor: "yellow" }}
+                    style={{ backgroundColor: "#f5f2f2" }}
                   >
                     <Grid item xs={12} container>
                       <Grid
                         item
                         xs={6}
+
                         //  style={{ backgroundColor: "red" }}
                       >
                         <Typography gutterBottom variant="subtitle1">
@@ -286,7 +401,7 @@ class Ticket extends Component {
                           container
                           style={{
                             backgroundColor: "orange ",
-                            marginTop: "5px",
+                            marginTop: "8px",
                           }}
                         >
                           <Typography gutterBottom className="l3">
@@ -298,7 +413,7 @@ class Ticket extends Component {
                           item
                           xs={12}
                           container
-                          style={{ height: "120px" }}
+                          style={{ height: "160px" }}
                         >
                           {/* <Typography gutterBottom variant="subtitle1">
                             demo
@@ -309,7 +424,7 @@ class Ticket extends Component {
                             container
                             alignItems="center"
                             justify="center"
-                            // style={{ backgroundColor: "purple " }}
+                            style={{ paddingTop: 20 }}
                           >
                             <Typography
                               gutterBottom
@@ -324,13 +439,29 @@ class Ticket extends Component {
                             item
                             xs={12}
                             container
-                            alignItems="center"
-                            justify="center"
+                            style={{ padding: 30 }}
                             // style={{ backgroundColor: "purple " }}
                           >
-                            <Typography gutterBottom className="l2">
-                              ADMIT ONE
-                            </Typography>
+                            <Grid
+                              item
+                              xs={12}
+                              alignItems="center"
+                              justify="center"
+                              container
+                              direction="row"
+                            >
+                              <Typography className="l2">ADMIT</Typography>
+                            </Grid>
+                            <Grid
+                              item
+                              xs={12}
+                              alignItems="center"
+                              justify="center"
+                              container
+                              direction="row"
+                            >
+                              <Typography className="l2">ONE</Typography>
+                            </Grid>
                           </Grid>
                         </Grid>
 
